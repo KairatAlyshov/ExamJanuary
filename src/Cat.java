@@ -9,8 +9,17 @@ public class Cat {
     private int health;
     private int average;
     private static List<String> names = List.of("Kiko", "Milky", "Donut", "Suso");
+    private boolean action;
 
     Random rnd = new Random();
+
+    public boolean isAction() {
+        return action;
+    }
+
+    public void setAction(boolean action) {
+        this.action = action;
+    }
 
     public Cat(int i) {
         name = names.get(i);
@@ -19,6 +28,7 @@ public class Cat {
         mood = rnd.nextInt(100);
         health = rnd.nextInt(100);
         average = (health + mood + satiety) / 3;
+        action =false;
     }
 
     public Cat() {

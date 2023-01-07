@@ -5,10 +5,12 @@ public class Main {
 
     public static void main(String[] args) {
         List<Cat> cat = new ArrayList<>();
+        Action act = new Action();
         Run.fillList();
-        Run.catDetails();
+        Run.print();
         Run.addCat();
         Run.action();
+        Run.nextDay();
 
 
     }
