@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Run {
+    static Scanner sc = new Scanner(System.in);
     private static List<Cat> cats = new ArrayList<>();
 
 
@@ -31,7 +32,6 @@ public class Run {
 public static void addCat() {
     Cat cat = new Cat();
     Random rnd = new Random();
-    Scanner sc = new Scanner(System.in);
         try {
             System.out.print("Enter the new Cat, type the name and age up to 18\n" + "name: ");
             String name = sc.nextLine();
@@ -49,6 +49,36 @@ public static void addCat() {
             }
         } catch (Exception e) {
             System.out.println("ERROR - enter right name and age");
+        }
+    }
+
+    public static void action(){
+        System.out.println("What action do you want to do?\n"+"(1)-feed the cat");
+        System.out.println("(2)-play with cat");
+        System.out.println("(3)-treat a cat");
+        int action = sc.nextInt();
+        switch (action){
+            case 1:
+                System.out.println("With cat do you want to feed, enter the index?");
+                int i = sc.nextInt();
+                cats.get(i-1);
+                System.out.printf("You fed %s", cats.get(i-1).getName());
+
+                break;
+            case 2:
+                System.out.println("With cat do you want to play, enter the index?");
+                int in = sc.nextInt();
+                cats.get(in-1);
+                System.out.printf("You played with %s", cats.get(in-1).getName());
+                break;
+            case 3:
+                System.out.println("With cat do you want to treat, enter the index?");
+                int ind = sc.nextInt();
+                System.out.printf("You treated %s", cats.get(ind-1).getName());
+                break;
+            default:
+                System.out.println("enter right action");
+                action();
         }
     }
 }

@@ -8,7 +8,7 @@ public class Main {
         Run.fillList();
         Run.catDetails();
         Run.addCat();
-
+        Run.action();
 
 
     }
